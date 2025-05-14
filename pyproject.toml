@@ -1,0 +1,36 @@
+[project]
+name = "ims-common"
+description = ""
+requires-python = ">=3.12"
+version = "0.0.1"
+
+dependencies = [
+    "cryptography",
+    "fastapi[all]",
+    "PyJWT",
+    "pymongo",
+]
+
+[project.urls]
+"Repository" = "https://github.com/joelvdavies/common-repo-test"
+
+[project.optional-dependencies]
+code-analysis = [
+    "black==25.1.0",
+    "pylint==3.3.7",
+    "ims-common[test]"
+]
+
+test = [
+    "pytest==8.3.5",
+    "pytest-cov==6.1.1",
+    "pytest-env==1.1.5",
+]
+
+dev = [
+    "ims-common[code-analysis]",
+    "ims-common[test]",
+]
+
+[tool.setuptools]
+packages = ["ims_common"]
